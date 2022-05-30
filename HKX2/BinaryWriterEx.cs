@@ -110,6 +110,19 @@ namespace HKX2
 
         #region Other
 
+        public void WriteVector2(Vector2 vector)
+        {
+            WriteSingle(vector.X);
+            WriteSingle(vector.Y);
+        }
+
+        public void WriteVector3(Vector3 vector)
+        {
+            WriteSingle(vector.X);
+            WriteSingle(vector.Y);
+            WriteSingle(vector.Z);
+        }
+
         public void WriteVector4(Vector4 vector)
         {
             WriteSingle(vector.X);

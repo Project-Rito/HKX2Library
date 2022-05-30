@@ -110,6 +110,21 @@ namespace HKX2
 
         #region Other
 
+        public Vector2 ReadVector2()
+        {
+            var x = ReadSingle();
+            var y = ReadSingle();
+            return new Vector2(x, y);
+        }
+
+        public Vector3 ReadVector3()
+        {
+            var x = ReadSingle();
+            var y = ReadSingle();
+            var z = ReadSingle();
+            return new Vector3(x, y, z);
+        }
+
         public Vector4 ReadVector4()
         {
             var x = ReadSingle();

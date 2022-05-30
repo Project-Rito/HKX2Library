@@ -421,6 +421,16 @@ namespace HKX2
             WriteArrayBase(bw, d, e => WriteBoolean(bw, e));
         }
 
+        public void WriteVector2(BinaryWriterEx bw, Vector2 d)
+        {
+            bw.WriteVector2(d);
+        }
+
+        public void WriteVector3(BinaryWriterEx bw, Vector3 d)
+        {
+            bw.WriteVector3(d);
+        }
+
         public void WriteVector4(BinaryWriterEx bw, Vector4 d)
         {
             bw.WriteVector4(d);

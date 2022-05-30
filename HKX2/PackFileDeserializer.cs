@@ -288,6 +288,16 @@ namespace HKX2
             return ReadArrayBase(ReadBoolean, br);
         }
 
+        public Vector2 ReadVector2(BinaryReaderEx br)
+        {
+            return br.ReadVector2();
+        }
+
+        public Vector3 ReadVector3(BinaryReaderEx br)
+        {
+            return br.ReadVector3();
+        }
+
         public Vector4 ReadVector4(BinaryReaderEx br)
         {
             return br.ReadVector4();
