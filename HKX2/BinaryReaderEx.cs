@@ -281,28 +281,6 @@ namespace HKX2
 
         #endregion
 
-        #region Half
-
-        public System.Half ReadHalf()
-        {
-            unsafe
-            {
-                uint integer;
-                if (BigEndian)
-                    integer = BitConverter.ToUInt16(ReadReversedBytes(2), 0);
-                else
-                    integer = br.ReadUInt16();
-
-                return *(System.Half*)(&integer);
-            }
-        }
-
-        public System.Half AssertHalf(params System.Half[] options)
-        {
-            return AssertValue(ReadHalf(), "Half", "{0}", options);
-        }
-
-        #endregion
         #region Single
 
         public float ReadSingle()

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace HKX2
@@ -336,37 +335,6 @@ namespace HKX2
         {
             StepIn(Fill(name, "UInt64"));
             WriteUInt64(value);
-            StepOut();
-        }
-
-        #endregion
-
-        #region Half
-
-        public void WriteHalf(System.Half value)
-        {
-            ushort serializable;
-
-            unsafe
-            {
-                serializable = *(ushort*)(&value);
-            }
-
-            if (BigEndian)
-                WriteReversedBytes(BitConverter.GetBytes(serializable));
-            else
-                bw.Write(serializable);
-        }
-
-        public void ReserveHalf(string name)
-        {
-            Reserve(name, "Half", 2);
-        }
-
-        public void FillHalf(string name, System.Half value)
-        {
-            StepIn(Fill(name, "Half"));
-            WriteHalf(value);
             StepOut();
         }
 
